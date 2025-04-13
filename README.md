@@ -1,19 +1,28 @@
 # Email Validator
 
-A robust Python script for validating email addresses from various file formats with comprehensive validation rules and detailed logging.
+This repository contains two versions of the email validator:
 
-## Features
+1. **Standard Version** (`email_validator.py`)
+   - Suitable for small to medium datasets
+   - Lower resource consumption
+   - Ideal for regular usage
 
-- Supports multiple input file formats (TXT, CSV, Excel, Word)
-- Validates email syntax and domain existence
-- Checks for disposable email domains
-- Identifies role-based email addresses
-- Handles IDN (International Domain Names)
-- Concurrent processing for better performance
-- Detailed logging and progress tracking
+2. **Optimized Version** (`email_validator_optimized.py`)
+   - Designed for large datasets
+   - Enhanced performance with larger cache sizes
+   - Higher throughput with increased concurrent processing
+   - Progress tracking and checkpoint features
+   - Recommended when processing large email lists or if the standard version causes system lag
 
 ## Requirements
 
+Install the required dependencies using:
+
+```bash
+pip install -r requirements.txt
+```
+
+Core dependencies:
 ```bash
 python3
 dns.resolver
@@ -23,6 +32,7 @@ python-docx
 idna
 ratelimit
 cachetools
+tqdm (for progress tracking)
 ```
 
 ## Installation
